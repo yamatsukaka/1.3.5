@@ -393,7 +393,7 @@ def onmessage(update,bot:ObigramClient):
                 statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                 bot.sendMessage(update.message.chat.id,statInfo)
                 return
-        if '/zips' in msgText:
+        if '/zip' in msgText:
             getUser = user_info
             if getUser:
                 try:
@@ -404,10 +404,9 @@ def onmessage(update,bot:ObigramClient):
                    msg = 'Adding to configuration...\n'
                    msg+= '🗜The Parts are from '+ sizeof_fmt(size*1024*1024) +'\n'
                    bot.sendMessage(update.message.chat.id,msg)
-                   statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
-                   bot.editMessage(msg,statInfo)
+
                 except:
-                   bot.sendMessage(update.message.chat.id,f'⚠Error in command /zip size⚠')
+                   bot.sendMessage(update.message.chat.id,f'⚠️Error in command /zip size⚠️')
                 return
         if '/acc' in msgText:
             try:
