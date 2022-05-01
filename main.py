@@ -393,16 +393,16 @@ def onmessage(update,bot:ObigramClient):
                 statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                 bot.sendMessage(update.message.chat.id,statInfo)
                 return
-        if '/zip' in msgText:
+        if '/zips' in msgText:
             getUser = user_info
             if getUser:
                 try:
                    size = int(str(msgText).split(' ')[1])
-                   getUser['zip'] = size
+                   getUser['zips'] = size
                    jdb.save_data_user(username,getUser)
                    jdb.save()
-                   msg = '🗜The Parts are from '+ sizeof_fmt(size*1024*1024) +'\n'
-                   msg+= 'Adding to configuration...\n'
+                   msg = 'Adding to configuration...\n'
+                   msg+= '🗜The Parts are from '+ sizeof_fmt(size*1024*1024) +'\n'
                    bot.sendMessage(update.message.chat.id,msg)
                    statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                    bot.editMessage(msg,statInfo)
