@@ -398,7 +398,7 @@ def onmessage(update,bot:ObigramClient):
             if getUser:
                 try:
                    size = int(str(msgText).split(' ')[1])
-                   getUser['zips'] = size
+                   getUser['zip'] = size
                    jdb.save_data_user(username,getUser)
                    jdb.save()
                    msg = '🗜The Parts are from '+ sizeof_fmt(size*1024*1024) +'\n'
